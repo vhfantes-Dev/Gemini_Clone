@@ -5,6 +5,14 @@ import { Context } from '../../Context/Context'
 const Main = () => {
 
     const{onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(Context)
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          if (input.trim()) {
+            onSent(); 
+        }
+      }
+    };
   return (
     <div className='main'>
         <div className="nav">
@@ -21,19 +29,19 @@ const Main = () => {
             </div>
             <div className="cards">
                 <div className="card">
-                    <p>Proejo feito em React</p>
+                    <p>Projeto feito em React</p>
                     <img src={assets.compass_icon} alt="" />
                 </div>
                 <div className="card">
-                    <p>O Indiano que fez isso é maluco</p>
+                    <p>Uso de API'S</p>
                     <img src={assets.bulb_icon} alt="" />
                 </div>
                 <div className="card">
-                    <p>TEstes automatixados com Jest</p>
+                    <p>Testes automatizados com Jest</p>
                     <img src={assets.message_icon} alt="" />
                 </div>
                 <div className="card">
-                    <p>Vou arranjar um emprego melho que a global data</p>
+                    <p>Gerar um códgio em PHP</p>
                     <img src={assets.code_icon} alt="" />
                 </div>
                 </div> 
@@ -59,7 +67,7 @@ const Main = () => {
             }
                 <div className="main-bottom">
                     <div className="search-box">
-                        <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder='Digite aqui'/>
+                        <input onChange={(e)=>setInput(e.target.value)} value={input} onKeyDown={handleKeyDown}type="text" placeholder='Digite aqui'/>
                         <div>
                             <img src={assets.gallery_icon} alt="" />
                             <img src={assets.mic_icon} alt="" />
