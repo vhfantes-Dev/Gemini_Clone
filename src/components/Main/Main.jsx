@@ -75,7 +75,7 @@ const Main = () => {
                         </div>
                     </div>
                     <p className="bottom-info">
-                        Toda a Informação que a IA gerou
+                        Desenvolvido por FantesDev
                     </p>
                 </div>
             </div>
